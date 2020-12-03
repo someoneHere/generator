@@ -1,0 +1,280 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "es6": false,
+        "jasmine": true
+    },
+    "plugins": [
+        "react", "flowtype"
+    ],
+    // Map from global var to bool specifying if it can be redefined
+    "globals": {
+        "__DEV__": true,
+        "__dirname": false,
+        "__fbBatchedBridgeConfig": false,
+        "alert": false,
+        "cancelAnimationFrame": false,
+        "clearImmediate": true,
+        "clearInterval": false,
+        "clearTimeout": false,
+        "console": false,
+        "document": false,
+        "escape": false,
+        "Event": false,
+        "EventTarget": false,
+        "exports": false,
+        "fetch": false,
+        "FormData": false,
+        "global": false,
+        "jest": false,
+        "Map": true,
+        "module": false,
+        "navigator": false,
+        "process": false,
+        "Promise": true,
+        "Reflect": true,
+        "requestAnimationFrame": true,
+        "require": false,
+        "Set": true,
+        "setImmediate": true,
+        "setInterval": false,
+        "setTimeout": false,
+        "window": false,
+        "XMLHttpRequest": false,
+        "pit": false,
+
+        // Flow global types.
+        "ReactComponent": false,
+        "ReactClass": false,
+        "ReactElement": false,
+        "ReactPropsCheckType": false,
+        "ReactPropsChainableTypeChecker": false,
+        "ReactPropTypes": false,
+        "SyntheticEvent": false,
+        "$Either": false,
+        "$All": false,
+        "$Tuple": false,
+        "$Supertype": false,
+        "$Subtype": false,
+        "$Shape": false,
+        "$Diff": false,
+        "$Keys": false,
+        "$Enum": false,
+        "$Exports": false,
+        "$FlowIssue": false,
+        "$FlowFixMe": false,
+        "$FixMe": false
+    },
+
+    "rules": {
+        "flowtype/define-flow-type": 1,
+        "flowtype/use-flow-type": 1,
+        "no-await-in-loop": 1, // 禁止在循环中出现 await
+        "comma-dangle": 0, // 要求或禁止末尾逗号
+        "no-cond-assign": 1, // 禁止条件表达式中出现赋值操作符
+        "no-console": 0, // 禁用 console
+        "no-constant-condition": 0, // 禁止在条件中使用常量表达式
+        "no-control-regex": 1, // 禁止在正则表达式中使用控制字符
+        "no-debugger": 1, // 禁用 debugger
+        "no-dupe-keys": 1, // 禁止对象字面量中出现重复的 key
+        "no-duplicate-case": 1, // 禁止出现重复的 case 标签
+        "no-empty": 1, // 禁止出现空语句块
+        "no-ex-assign": 1, // 禁止对 catch 子句的参数重新赋值
+        "no-extra-boolean-cast": 0, // 禁止不必要的布尔转换
+        "no-extra-parens": 0, // 禁止不必要的括号
+        "no-extra-semi": 1, // 禁止不必要的分号
+        "no-func-assign": 1, // 禁止对 function 声明重新赋值
+        "no-inner-declarations": 1, // 禁止在嵌套的块中出现变量声明或 function 声明
+        "no-invalid-regexp": 1, // 禁止 RegExp 构造函数中存在无效的正则表达式字符串
+        "no-irregular-whitespace": 1, // 禁止在字符串和注释之外不规则的空白
+        "no-unsafe-negation": 1, // 禁止对关系运算符的左操作数使用否定操作符
+        "no-obj-calls": 1, // 禁止把全局对象作为函数调用
+        "no-regex-spaces": 1, // 禁止正则表达式字面量中出现多个空格
+        "no-sparse-arrays": 1, // 禁用稀疏数组
+        "no-unreachable": 1, // 禁止在return、throw、continue 和 break 语句之后出现不可达代码
+        "use-isnan": 1, // 要求使用 isNaN() 检查 NaN
+        "valid-jsdoc": 0, // 强制使用有效的 JSDoc 注释
+        "valid-typeof": 1, // 强制 typeof 表达式与有效的字符串进行比较
+
+        // Best Practices
+        // These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
+        "array-callback-return": 1, // 强制数组方法的回调函数中有 return 语句
+        "block-scoped-var": 1, // 强制把变量的使用限制在其定义的作用域范围内
+        "complexity": 0, // 指定程序中允许的最大环路复杂度
+        "consistent-return": 0, // 要求 return 语句要么总是指定返回的值，要么不指定
+        "curly": [1, "all"], // 强制所有控制语句使用一致的括号风格
+        "default-case": 0, // 要求 switch 语句中有 default 分支
+        "dot-location": [1, "property"], // 强制在点号之前和之后一致的换行
+        "dot-notation": 1, // 强制尽可能地使用点号
+        "eqeqeq": [1, "smart"], //要求使用 === 和 !==
+        "guard-for-in": 0, // 要求 for-in 循环中有一个 if 语句
+        "no-alert": 1, // 禁用 alert、confirm 和 prompt
+        "no-caller": 1, // 禁用 arguments.caller 或 arguments.callee
+        "no-case-declarations": 0, // 不允许在 case 子句中使用词法声明
+        "no-div-regex": 1, // 禁止除法操作符显式的出现在正则表达式开始的位置
+        "no-else-return": 0, // 禁止 if 语句中 return 语句之后有 else 块
+        "no-empty-pattern": 1, //禁止使用空解构模式
+        "no-eq-null": 0, // 禁止在没有类型检查操作符的情况下与 null 进行比较
+        "no-eval": 1, // 禁用 eval()
+        "no-extend-native": 1, // 禁止扩展原生类型
+        "no-extra-bind": 1, // 禁止不必要的 .bind() 调用
+        "no-fallthrough": 1, // 禁止 case 语句落空
+        "no-floating-decimal": 1, // 禁止数字字面量中使用前导和末尾小数点
+        "no-implied-eval": 1, // 禁止使用类似 eval() 的方法
+        "no-implicit-globals": 0, // 禁止在全局范围内使用变量声明和 function 声明
+        "no-invalid-this": 0, // 禁止 this 关键字出现在类和类对象之外
+        "no-labels": 1, // 禁用标签语句
+        "no-iterator": 1, // 禁用 __iterator__ 属性
+        "no-lone-blocks": 1, // 禁用不必要的嵌套块
+        "no-loop-func": 1, // 禁止在循环中出现 function 声明和表达式
+        "no-multi-spaces": [1, {"ignoreEOLComments": true}], // 禁止使用多个空格
+        "no-multi-str": 0, // 禁止使用多行字符串
+        "no-global-assign": 1, // 禁止对原生对象或只读的全局对象进行赋值
+        "no-new": 1, // 禁止使用 new 以避免产生副作用
+        "no-new-func": 1, // 禁止对 Function 对象使用 new 操作符
+        "no-new-wrappers": 1, // 禁止对 String，Number 和 Boolean 使用 new 操作符
+        "no-octal": 1, // 禁用八进制字面量
+        "no-octal-escape": 1, // 禁止在字符串中使用八进制转义序列
+        "no-param-reassign": 0, // 禁止对 function 的参数进行重新赋值
+        "no-proto": 1, // 禁用 __proto__ 属性
+        "no-redeclare": 1, // 禁止多次声明同一变量
+        "no-return-assign": 1, // 禁止在 return 语句中使用赋值语句
+        "no-script-url": 1, // 禁止使用 javascript: url
+        "no-self-assign": 1, // 禁止自我赋值
+        "no-self-compare": 1, // 禁止自身比较
+        "no-sequences": 1, // 禁用逗号操作符
+        "no-throw-literal": 1, // 禁止抛出异常字面量
+        "no-unused-expressions": 0, // 禁止出现未使用过的表达式
+        "no-void": 1, // 禁用 void 操作符
+        "no-warning-comments": 0, // 禁止在注释中使用特定的警告术语
+        "no-with": 1, // 禁用 with 语句
+        "radix": 0, // 强制在parseInt()使用基数参数
+        "require-await": 1, //禁止使用不带 await 表达式的 async 函数
+        "vars-on-top": 0, // 要求所有的 var 声明出现在它们所在的作用域顶部
+        "wrap-iife": [1, "inside"], // 要求 IIFE 使用括号括起来
+        "yoda": 1, // 要求或禁止 “Yoda” 条件
+        "indent": [1, 2, {"SwitchCase": 1}], // 强制使用一致的缩进
+
+        // Variables
+        // These rules have to do with variable declarations.
+        "no-catch-shadow": 1, // 禁止 catch 子句的参数与外层作用域中的变量同名
+        "no-delete-var": 1, // 禁止删除变量
+        "no-label-var": 1, // 不允许标签与变量同名
+        "no-shadow": 1, // 禁止变量声明与外层作用域的变量同名
+        "no-shadow-restricted-names": 1, // 禁止将标识符定义为受限的名字
+        "no-undef": 2, // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
+        "no-undefined": 0, // 禁止将 undefined 作为标识符
+        "no-undef-init": 1, // 禁止将变量初始化为 undefined
+        "no-unused-vars": [1, {
+            "vars": "local",
+            "args": "none",
+            "varsIgnorePattern": "React|_|observer|inject"
+        }], // 禁止出现未使用过的变量
+        "no-use-before-define": 0, // 禁止在变量定义之前使用它们
+
+        // Node.js
+        // These rules are specific to JavaScript running on Node.js.
+        "handle-callback-err": 1, // enforces error handling in callbacks (off by default) (on by default in the node environment)
+        "no-mixed-requires": 1, // disallow mixing regular variable and require declarations (off by default) (on by default in the node environment)
+        "no-new-require": 1, // disallow use of new operator with the require function (off by default) (on by default in the node environment)
+        "no-path-concat": 1, // disallow string concatenation with __dirname and __filename (off by default) (on by default in the node environment)
+        "no-process-exit": 0, // disallow process.exit() (on by default in the node environment)
+        "no-restricted-modules": 1, // restrict usage of specified node modules (off by default)
+        "no-sync": 0, // disallow use of synchronous methods (off by default)
+
+        // Stylistic Issues
+        // These rules are purely matters of style and are quite subjective.
+        "array-bracket-newline": [1, "consistent"], // 在数组开括号后和闭括号前强制换行
+        "array-bracket-spacing": 0, // 强制数组方括号中使用一致的空格
+        "brace-style": [1, "1tbs", {"allowSingleLine": true}], // 强制在代码块中使用一致的大括号风格
+        "space-before-blocks": 1, // 强制在块之前使用一致的空格
+        "key-spacing": [1, {
+            "beforeColon": false,
+            "afterColon": true
+        }], // 强制在对象字面量的属性中键和值之间使用一致的间距
+        "keyword-spacing": [1, {
+            "before": true,
+            "after": true
+        }], // 强制在关键字前后使用一致的空格
+        "jsx-quotes": [1, "prefer-single"], // 强制在 JSX 属性中一致地使用双引号或单引号
+        "comma-spacing": [
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ], // 强制在逗号前后使用一致的空格
+        "computed-property-spacing": [1, "never"], // 强制在计算的属性的方括号中使用一致的空格
+        "camelcase": 0, // 强制使用骆驼拼写法命名约定
+        "consistent-this": [1, "self"], // 当获取当前执行环境的上下文时，强制使用一致的命名
+        "eol-last": 0, // 要求或禁止文件末尾存在空行
+        "func-names": 0, // 要求或禁止使用命名的 function 表达式
+        "func-style": 0, // 强制一致地使用 function 声明或表达式
+        "new-cap": 0, // 要求构造函数首字母大写
+        "new-parens": 1, // 要求调用无参构造函数时有圆括号
+        "no-nested-ternary": 0, // 禁用嵌套的三元表达式
+        "no-array-constructor": 1, // 禁用 Array 构造函数
+        "no-lonely-if": 0, // 禁止 if 作为唯一的语句出现在 else 语句中
+        "no-new-object": 1, // 	禁用 Object 的构造函数
+        "func-call-spacing": 1, // 要求或禁止在函数标识符和其调用之间有空格
+        "no-ternary": 0, // 禁用三元操作符
+        "no-trailing-spaces": 1, // 禁用行尾空格
+        "no-underscore-dangle": 0, // 禁止标识符中有悬空下划线
+        "no-mixed-spaces-and-tabs": 1, // 禁止空格和 tab 的混合缩进
+        "semi-spacing": 1, // 强制分号之前和之后使用一致的空格
+        "quotes": [1, "single", "avoid-escape"], // 强制使用一致的反勾号、双引号或单引号
+        "quote-props": 0, // 要求对象字面量属性名称用引号括起来
+        "semi": 0, // 要求或禁止使用分号代替 ASI
+        "sort-vars": 0, // 要求同一个声明块中的变量按顺序排列
+        "space-in-parens": 1, // 强制在圆括号内使用一致的空格
+        "space-infix-ops": 1, // 要求操作符周围有空格
+        "space-unary-ops": [1, {
+            "words": true,
+            "nonwords": false
+        }], // 强制在一元操作符前后使用一致的空格
+        "max-nested-callbacks": 0, // 强制回调函数最大嵌套深度
+        "one-var": [1, "never"], // 强制函数中的变量要么一起声明要么分开声明
+        "wrap-regex": 0, // 要求正则表达式被括号括起来
+
+        // ECMAScript 6
+        // 这些规则只与 ES6 有关, 即通常所说的 ES2015
+        "arrow-body-style": 0, // 要求箭头函数体使用大括号
+        "arrow-spacing": 1, // 强制箭头函数的箭头前后使用一致的空格
+        "no-const-assign": 1, // 禁止修改 const 声明的变量
+        "no-dupe-class-members": 1, // 禁止类成员中出现重复的名称
+        "no-duplicate-imports": 1, // 禁止重复模块导入
+        "no-this-before-super": 1, // 禁止在构造函数中，在调用 super() 之前使用 this 或 super
+        "no-useless-rename": 1, // 禁止在 import 和 export 和解构赋值时将引用重命名为相同的名字
+        "no-var": 1, // 要求使用 let 或 const 而不是 var
+        "prefer-arrow-callback": 1, // 要求回调函数使用箭头函数
+        "prefer-rest-params": 1, // 要求使用剩余参数而不是 arguments
+        "rest-spread-spacing": 1, // 强制剩余和扩展运算符及其表达式之间有空格
+
+        // Legacy
+        // The following rules are included for compatibility with JSHint and JSLint. While the names of the rules may not match up with the JSHint/JSLint counterpart, the functionality is the same.
+        "max-depth": 0, // 强制可嵌套的块的最大深度
+        "max-len": 0, // 强制一行的最大长度
+        "max-params": 0, // 强制函数定义中最多允许的参数数量
+        "max-statements": 0, // 强制函数块最多允许的的语句数量
+        "no-bitwise": 1, // 禁用按位运算符
+        "no-plusplus": 0, // 禁用一元操作符 ++ 和 --
+
+        "react/display-name": 0,
+        "react/jsx-key": 1,
+        "react/jsx-boolean-value": 0,
+        "react/jsx-no-undef": 1,
+        "react/jsx-sort-props": 0,
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
+        "react/no-did-mount-set-state": 1,
+        "react/no-did-update-set-state": 1,
+        "react/no-multi-comp": 0,
+        "react/no-unknown-property": 0,
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": 1,
+        "react/no-string-refs": 1,
+        "react/require-render-return": 1,
+        "react/self-closing-comp": 1,
+        "react/wrap-multilines": 0
+    }
+}
